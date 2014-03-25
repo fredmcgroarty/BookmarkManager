@@ -2,7 +2,7 @@ ENV["RACK_ENV"] = 'test'
 
 #using the right database for tests
 
-require './server' 
+require './lib/server' 
 require 'database_cleaner' #required so the database is cleaned after every test 
 require 'capybara/rspec'
 require 'sinatra'
@@ -23,7 +23,8 @@ RSpec.configure do |config|
   config.after(:each) do
     DatabaseCleaner.clean
   end
-  
+
+
 end
 
 
