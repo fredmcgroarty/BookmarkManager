@@ -2,8 +2,12 @@ ENV["RACK_ENV"] = 'test'
 
 #using the right database for tests
 
-require 'server' 
+require './server' 
 require 'database_cleaner' #required so the database is cleaned after every test 
+require 'capybara/rspec'
+require 'sinatra'
+
+Capybara.app = Sinatra::Application.new
 
 RSpec.configure do |config|
 
@@ -21,3 +25,5 @@ RSpec.configure do |config|
   end
   
 end
+
+
