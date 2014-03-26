@@ -82,14 +82,14 @@ use Rack::Flash
     erb :"users/retrieve"
   end
 
-  post '/retrieve'
-    user = User.first(:email => email)
-    user.password_token = (1..64).map{('A'..'Z').to_a.sample}.join
-    user.password_token_timestamp = Time.now
-    user.save
-    redirect to('/')
-  end
-end
+  # post '/retrieve'
+  #   user = User.first(:email => email)
+  #   user.password_token = (1..64).map{('A'..'Z').to_a.sample}.join
+  #   user.password_token_timestamp = Time.now
+  #   user.save
+  #   redirect to('/')
+  # end
+  
 
 
 
