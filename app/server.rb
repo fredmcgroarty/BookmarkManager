@@ -74,16 +74,12 @@ use Rack::Flash
   end
 
   post '/recovery' do
-    debugger
     email = params[:pass_retrieve]
     user = User.first(:email => email)
-  
-  end
-
-
-  delete '/sessions' do
-    flash[:notice] = "Adios!"
-    session[:user_id] = nil
+    if user
+      user.generate_token
+    end 
+    flash[:notice] = "An email will be with you shortly"
     redirect to('/')
   end
 
@@ -91,13 +87,14 @@ use Rack::Flash
     erb :"users/retrieve"
   end
 
-  # post '/retrieve'
-  #   user = User.first(:email => email)
-  #   user.password_token = (1..64).map{('A'..'Z').to_a.sample}.join
-  #   user.password_token_timestamp = Time.now
-  #   user.save
-  #   redirect to('/')
-  # end
+  delete '/sessions' do
+    flash[:notice] = "Adios!"
+    session[:user_id] = nil
+    redirect to('/')
+  end
+
+
+
   
 
 

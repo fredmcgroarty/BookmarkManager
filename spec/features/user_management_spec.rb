@@ -62,8 +62,9 @@ feature "user signs out" do
     expect(page).to have_content("Adios!")
     expect(page).not_to have_content("Welcome, test@test.com")
   end
-
 end
+
+
 
 
 
