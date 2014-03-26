@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'data_mapper'
 require 'rack-flash'
+require 'debugger'
 
 require './lib/link'
 require './lib/tag'
@@ -71,6 +72,12 @@ use Rack::Flash
       erb :"sessions/new"
     end
   end
+
+  post '/recovery' do
+    #debugger
+    token = params[:pass_retrieve]
+  end
+
 
   delete '/sessions' do
     flash[:notice] = "Adios!"
