@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'data_mapper'
+require 'rack-flash'
 
 require './lib/link'
 require './lib/tag'
@@ -10,6 +11,7 @@ require_relative 'data_mapper_setup'
 
 enable :sessions 
 set :session_secret, 'xxx222kkk'
+use Rack::Flash
 
 	get '/' do
 	  @links = Link.all
@@ -34,18 +36,26 @@ set :session_secret, 'xxx222kkk'
   # this will either find this tag or create
   # it if it doesn't exist already
 
-  get '/users/new' do 
+  get '/users/new' do
+  	@user = User.new  
   	erb :"users/new" 
   	#in speech marks because otherwise it'd think its a sum
   end
 
   post '/users' do
-  	user = User.create(:email => params[:email],
+  	@user = User.new(:email => params[:email],
                      :password => params[:password],
                      :password_confirmation => params[:password_confirmation])  
-  	session[:user_id] = user.id
-  	redirect to('/')
+  	if @user.save
+  		session[:user_id] = @user.id
+  		redirect to('/')
+  	else 
+  		flash[:notice] = "Sorry, your passwords don't match"
+  		erb :"users/new"
+  	end
 	end
+
+
 
 
 

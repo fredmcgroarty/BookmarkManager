@@ -6,6 +6,7 @@ gem 'database_cleaner'
 gem 'capybara'
 gem 'sinatra'
 gem 'bcrypt'
+gem 'rack-flash3'
 
 group :development, :test do 
 	gem 'rspec'
