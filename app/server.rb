@@ -71,6 +71,12 @@ use Rack::Flash
     end
   end
 
+  delete '/sessions' do
+    flash[:notice] = "Adios!"
+    session[:user_id] = nil
+    redirect to('/')
+  end
+
 
 
 
