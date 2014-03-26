@@ -2,6 +2,7 @@ require 'sinatra'
 require 'data_mapper'
 require 'rack-flash'
 require 'debugger'
+require 'sinatra/partial'
 
 require './lib/link'
 require './lib/tag'
@@ -12,6 +13,7 @@ require_relative 'data_mapper_setup'
 
 enable :sessions 
 set :session_secret, 'xxx222kkk'
+set :partial_template_engine, :erb
 use Rack::Flash
 
 	get '/' do
@@ -74,6 +76,7 @@ use Rack::Flash
   end
 
   post '/recovery' do
+    debugger
     email = params[:pass_retrieve]
     user = User.first(:email => email)
     if user
