@@ -10,7 +10,7 @@ class User
 	include DataMapper::Resource 
 
 	property :id, Serial 
-	property :email, String, :unique => true #this checks to see if the email is unique 
+	property :email, String, :unique => true, :message => "This email is already taken" #this checks to see if the email is unique 
 	property :password_digest, Text #created column in db called 'password digest'
 
 	def password=(password)
@@ -19,6 +19,6 @@ class User
 		self.password_digest = BCrypt::Password.create(password)
 	end 
 
-  validates_confirmation_of :password
+  validates_confirmation_of :password, :message => "Sorry, your passwords don't match"
 
 end

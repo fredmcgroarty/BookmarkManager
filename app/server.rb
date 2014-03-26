@@ -47,17 +47,17 @@ use Rack::Flash
                      :password => params[:password],
                      :password_confirmation => params[:password_confirmation])  
   	if @user.save
-  		session[:user_id] = @user.id
+  		session[:user_id] = @user.id #this adds all the inputted information if successful and the session can proceed
   		redirect to('/')
   	else 
-  		flash[:notice] = "Sorry, your passwords don't match"
+  		flash.now[:errors] = @user.errors.full_messages #if there is an error (i.e) passwords don't match, then the data stored in the @user object will be redirected with the error messages onto the new page 
   		erb :"users/new"
   	end
 	end
 
 	#MAYBE LOOK INTO FLASHING A MESSAGE IF EMAILS ARE ALREADY TAKEN
 
-
+# "Sorry, your passwords don't match"
 
 
 
