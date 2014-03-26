@@ -47,7 +47,8 @@ use Rack::Flash
                      :password => params[:password],
                      :password_confirmation => params[:password_confirmation])  
   	if @user.save
-  		session[:user_id] = @user.id #this adds all the inputted information if successful and the session can proceed
+      user_id = :user_id
+  		session[user_id] = @user.id #this adds all the inputted information if successful and the session can proceed
   		redirect to('/')
   	else 
   		flash.now[:errors] = @user.errors.full_messages #if there is an error (i.e) passwords don't match, then the data stored in the @user object will be redirected with the error messages onto the new page 
@@ -76,6 +77,19 @@ use Rack::Flash
     session[:user_id] = nil
     redirect to('/')
   end
+
+  get '/retrieve' do 
+    erb :"users/retrieve"
+  end
+
+  post '/retrieve'
+    user = User.first(:email => email)
+    user.password_token = (1..64).map{('A'..'Z').to_a.sample}.join
+    user.password_token_timestamp = Time.now
+    user.save
+    redirect to('/')
+  end
+end
 
 
 
