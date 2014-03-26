@@ -20,5 +20,6 @@ class User
 	end 
 
   validates_confirmation_of :password, :message => "Sorry, your passwords don't match"
+  #without the message, datamaper includes an autoresponse 
 
 end
