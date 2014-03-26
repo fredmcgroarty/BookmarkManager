@@ -74,8 +74,10 @@ use Rack::Flash
   end
 
   post '/recovery' do
-    #debugger
-    token = params[:pass_retrieve]
+    debugger
+    email = params[:pass_retrieve]
+    user = User.first(:email => email)
+  
   end
 
 
