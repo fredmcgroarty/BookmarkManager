@@ -10,7 +10,7 @@ class User
 	include DataMapper::Resource 
 
 	property :id, Serial 
-	property :email, String
+	property :email, String, :unique => true #this checks to see if the email is unique 
 	property :password_digest, Text #created column in db called 'password digest'
 
 	def password=(password)

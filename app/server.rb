@@ -55,6 +55,8 @@ use Rack::Flash
   	end
 	end
 
+	#MAYBE LOOK INTO FLASHING A MESSAGE IF EMAILS ARE ALREADY TAKEN
+
 
 
 
