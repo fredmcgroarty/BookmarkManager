@@ -1,20 +1,10 @@
-header {
-  width: 100%;
-  height: 30px;
-  background-color: black;
-  color: white;
-  display: flex;
-  padding: 0 5px;
-}
-
-header #logo {
-  margin: auto 0;
-  display: flex;  
-  font-family: Helvetica, Arial, Sans-serif;
+body {
+  font-family: Helvetica, Arial, Sans-serif, 'Share Tech Mono';
+  background-image:url("../skulls.png");
 }
 
 a.button {
-  display: inline-block; /* display inline but have dimensions */
+  display: inline-block;  display inline but have dimensions 
   width: 80px;
   background-color: #82B743;
   border: 2px solid white;
@@ -27,4 +17,24 @@ a.button {
   margin-right: 5px;
   text-shadow: 0 0 2px rgba(0,0,0, 0.4); /*for readability*/
 }
+
+.sign_in_sign_up {
+	float: right;
+	margin-top: -35px;
+	margin-right: 5px
+}
+
+header {
+  height: 40px;
+  background-color: black;
+  color: white;
+  display: flex;
+  padding: 0 20px;
+  height: 50px
+}
+
+#logo {
+	padding: 15px;
+	font-family: Helvetica;
+} 
 
