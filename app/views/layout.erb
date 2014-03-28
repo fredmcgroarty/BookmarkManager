@@ -1,14 +1,17 @@
+<!DOCTYPE html>
 <html>
   <head>
     <title> Bookmark Manager </title> 
       <link rel="stylesheet" type="text/css" href="/css/application.css">
       <link rel="stylesheet" type="text/css" href="/css/reset.css">
+      <link href='http://fonts.googleapis.com/css?family=Share+Tech+Mono' rel='stylesheet' type='text/css'>
+
   </head>
     <body>
       <%= partial :header %>
       <%= partial :flash %>
-      <%= yield %>
       <%= partial :welcome_message %>
+      <%= yield %>
     </body>
 </html>
 

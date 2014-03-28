@@ -8,6 +8,8 @@ require './lib/link'
 require './lib/tag'
 require './lib/user'
 
+require_relative 'controllers/links'
+
 require_relative 'helpers/application'
 require_relative 'data_mapper_setup'
 
@@ -16,20 +18,7 @@ set :session_secret, 'xxx222kkk'
 set :partial_template_engine, :erb
 use Rack::Flash
 
-	get '/' do
-	  @links = Link.all
-	  erb :index
-	end
-	
-	post '/links' do 
-		url = params["url"]
-		title = params["title"]
-		tags = params["tags"].split(" ").map do |tag|
-    	Tag.first_or_create(:text => tag)
-  	end
-		Link.create(:url => url, :title => title, :tags => tags)
-		redirect to('/')
-	end
+
 
 	get '/tags/:text' do 
 		tag = Tag.first(:text => params[:text])
@@ -75,8 +64,11 @@ use Rack::Flash
     end
   end
 
+  get '/retrieve' do 
+    erb :"users/retrieve"
+  end
+
   post '/recovery' do
-    debugger
     email = params[:pass_retrieve]
     user = User.first(:email => email)
     if user
@@ -84,10 +76,6 @@ use Rack::Flash
     end 
     flash[:notice] = "An email will be with you shortly"
     redirect to('/')
-  end
-
-  get '/retrieve' do 
-    erb :"users/retrieve"
   end
 
   delete '/sessions' do

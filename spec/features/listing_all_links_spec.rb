@@ -3,6 +3,9 @@ require 'spec_helper'
 feature "User browses the list of links" do
 
   before(:each) {
+    User.create(:email => "test@test.com",
+                :password => 'test',
+                :password_confirmation => 'test')
     Link.create(:url => "http://www.makersacademy.com",
                 :title => "Makers Academy", 
                 :tags => [Tag.first_or_create(:text => 'education')])
@@ -18,11 +21,15 @@ feature "User browses the list of links" do
   }
   scenario "when opening the home page" do
     visit '/'
+    sign_in('test@test.com', 'test')
+    visit '/'
     expect(page).to have_content("Makers Academy")
   end
 
   scenario "filtered links by tags" do 
-  	visit '/tags/search'
+  	visit '/'
+    sign_in('test@test.com', 'test')
+    visit '/tags/search'
   	expect(page).not_to have_content("Makers Academy")
   	expect(page).not_to have_content("Code.org")
   	expect(page).to have_content("Google")

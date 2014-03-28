@@ -1,19 +1,14 @@
+<% if current_user %>
 
-<h1> welcome to the bookmark manager</h1>
+<h1>Welcome to the bookmark manager</h1>
+  <%= partial :"links/new" %>
+
 Current links:
-<ul> <!-- unordered list -->
+<ul>
   <% @links.each do |link| %>
     <li><a href="<%= link.url %>"><%= link.title %></a></li>
   <% end %>
 </ul>
 
-<div id="new-link">
-  <form action="/links" method="post">
-    Url: <input type="text" name="url">
-    Title: <input type="text" name="title">
-    Tags: <input type="text" name="tags">
-    <input type="submit" value="Add link">
-  </form>
-</div>
-
+<% end %>
 
