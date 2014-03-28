@@ -2,13 +2,11 @@
   <a href='/' id="logo">Bookmark Manager</a>
   <div id="user-links">
     <% if current_user %>
-      <span id="welcome-message">
-        Welcome, <%= current_user.email %>  
-      </span>
     
   <a href="/" method="post "class="button highlighted">Add link</a>
 
      <a  class="button highlighted sign-out">Sign out</a>
+      <%= partial :welcome_message %>
 
     <% else %>
       <a href='/users/new' id='sign-up' class='button'>Sign up</a>

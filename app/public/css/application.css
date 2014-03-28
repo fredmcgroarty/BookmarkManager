@@ -1,6 +1,12 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body {
   font-family: Helvetica, Arial, Sans-serif, 'Bangers';
   background-image:url("../skulls.png");
+  margin: 0 0 100px; 
 }
 
 .sign-out {
@@ -38,30 +44,28 @@ header {
   opacity: 0.7;
 }
 
-
-
   /* every immediate child to be vertically centered */
-  header > * {
-    margin: auto 0;
-  }
-  header #logo {    
-    display: flex;   
-    margin-right: 20px; 
-    font-family: 'Bangers', cursive;
-    font-size: 45px
-  }
+header > * {
+  margin: auto 0;
+}
 
-  header a {
-    color: white;
-    text-decoration: none;
-  }
+header #logo {    
+  display: flex;   
+  margin-right: 20px; 
+  font-family: 'Bangers', cursive;
+  font-size: 45px
+}
 
-  header #user-links {
-    flex: 1; /* http://learnlayout.com/flexbox.html */
-    -webkit-flex: 1;
-    text-align: right;  
-  }
+header a {
+  color: white;
+  text-decoration: none;
+}
 
+header #user-links {
+  flex: 1; /* http://learnlayout.com/flexbox.html */
+  -webkit-flex: 1;
+  text-align: right;  
+}
 
 #links-container {
   background-color: white;
@@ -78,14 +82,76 @@ header {
 }
 
 .link a.title {
-    letter-spacing: 1px;    
-  }
+  letter-spacing: 1px;    
+}
 
-  .link .description {
-    margin: 10px inherit;
-  }
+.link .description {
+  margin: 10px inherit;
+}
 
-  .link .source {
-    float: right;
+.link .source {
+  float: right;
+  font-size: 12px;
+}
+
+#notice {
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
+  background-color: rgba(67,183,120,0.75);
+  border-radius: 4px;
+  color: white;
+}
+
+
+footer {
+    display: flex;
+    background-color: black;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    font-family:'Bangers', cursive;
+    color: white;
     font-size: 12px;
+    opacity: 0.7;
+    position: center;
+}
+
+footer a:link {
+  color: white;
+}
+
+footer > * {
+    margin: auto inherit;
   }
+
+footer img {
+  vertical-align: top;
+}
+
+
+footer p {
+  padding: 5px 25px;
+}
+
+.new-link {
+  font-size: 20px;
+  background: #c0392b;
+  border-radius: 4px;
+  color: white;
+  border: none;
+  font-family: 'Bangers', cursive;
+  padding: 7px;
+  height: 30px;
+}
+
+#welcome-message {
+   text-align: center;
+  margin: 5px;
+  padding: 5px;
+  background-color: rgba(67,183,120,0.75);
+  border-radius: 4px;
+  color: white;
+}
