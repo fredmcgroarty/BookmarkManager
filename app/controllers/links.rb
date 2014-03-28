@@ -1,9 +1,13 @@
 	get '/' do
 	  @links = Link.all
-	  erb :index
+	  erb :"index"
 	end
 
-	post '/links' do 
+	get '/links/new' do
+		erb :"links/new"
+	end
+
+	post '/links' do
 		url = params["url"]
 		title = params["title"]
 		tags = params["tags"].split(" ").map do |tag|
@@ -12,3 +16,4 @@
 		Link.create(:url => url, :title => title, :tags => tags)
 		redirect to('/')
 	end
+
