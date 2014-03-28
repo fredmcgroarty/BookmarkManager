@@ -1,13 +1,12 @@
-<html>
-  <head>
-    <title> Bookmark Manager </title> 
-      <link rel="stylesheet" type="text/css" href="/css/application.css">
-  </head>
-    <body>
-      <%= partial :flash %>
-      <%= yield %>
-      <%= partial :welcome_message %>
-    </body>
-</html>
-
-
+<head>
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" type="text/css" href="css/application.css">
+</head>
+<body>
+  <title>Bookmark manager</title>
+</head>
+<body>
+  <%= partial :header %>
+  <%= partial :flash %>
+  <%= yield %>
+</body>
