@@ -1,7 +1,6 @@
 <% if current_user %>
 
 <h1>Welcome to the bookmark manager</h1>
-  <%= partial :"links/new" %>
 
 Current links:
 <ul>
@@ -9,6 +8,9 @@ Current links:
     <li><a href="<%= link.url %>"><%= link.title %></a></li>
   <% end %>
 </ul>
+
+Add Links
+  <%= partial :"links/new" %>
 
 <% end %>
 
