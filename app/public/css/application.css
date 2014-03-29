@@ -8,11 +8,19 @@ body {
   box-sizing: border-box;
 }
 
+
+
 html {
   position: relative;
   min-height: 100%;
 }
-a.button {
+
+a {
+  text-decoration: none;
+  color: #b77843;
+}
+
+.button {
   display: inline-block; /* display inline but have dimensions */
   width: 80px;
   background-color: #82B743;
@@ -25,10 +33,17 @@ a.button {
   margin-left: 5px;
   margin-right: 5px;
   text-shadow: 0 0 2px rgba(0,0,0, 0.4); /*for readability*/
+  font-size: 16px;
+  width: 110px;
+  cursor: pointer;
 }
 
-/* a link that has both classes. Overrides the previous declaration */
-a.button.highlighted {
+#welcome-message {
+  display: inline-block;
+}
+
+
+.button.highlighted {
   background-color: #b77843;
 }
 
@@ -55,7 +70,6 @@ header {
   }
 
   header #user-links {
-
     flex: 1; /* http://learnlayout.com/flexbox.html */
     -webkit-flex: 1;
     text-align: right;  
