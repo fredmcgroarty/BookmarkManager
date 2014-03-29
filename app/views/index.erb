@@ -1,7 +1,14 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="../css/reset.css">
+  <link rel="stylesheet" type="text/css" href="../css/application.css">
+</head>
+
 <h1> welcome to the bookmark manager</h1>
 Current links:
-<ul>
-  <% @links.each do |link| %>
-    <li><a href="<%= link.url %>"><%= link.title %></a></li>
-  <% end %>
-</ul>
+<div id='links-container'>
+  <ul id='links'>
+    <% @links.each do |link| %>
+      <%= partial :link, :locals => {:link => link}  %>
+    <% end %>
+  </ul>  
+</div>
