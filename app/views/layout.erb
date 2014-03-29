@@ -1,11 +1,18 @@
+<html>
 <head>
   <link rel="stylesheet" type="text/css" href="css/reset.css">
   <link rel="stylesheet" type="text/css" href="css/application.css">
 </head>
-<body>
   <title>Bookmark manager</title>
 <body>
-  <%= partial :header %>
-  <%= partial :flash %>
-  <%= yield %>
+	<div class="wrapper">
+  	<%= partial :header %>
+  	<%= partial :flash %>
+  	<%= yield %>
+  	 <div class="push"></div>
+  	<%= partial :footer %>
+  </div>
+
 </body>
+</html>
+
