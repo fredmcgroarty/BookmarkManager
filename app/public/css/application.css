@@ -1,16 +1,16 @@
-body {
-  font-family: Helvetica, Arial, Sans-serif;
-  background-image:url("../skulls.png");
-  margin: : 0 0 100px;
-}
-
 * {
   box-sizing: border-box;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+body {
+  font-family: Helvetica, Arial, Sans-serif;
+  background-image:url("../skulls.png");
+/*  margin: : 0 0 100px;
+*/}
+
+
+html, body {
+  height: 100%;
 }
 
 a {
@@ -101,19 +101,20 @@ header {
   font-size: 12px;
 }
 
-footer {
-  display: flex;
-  background-color: rgba(0,0,0,0.2);
-}
 
 .wrapper {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -4em;
+  margin: 0 auto -70px;
 }
 .footer, .push {
-  height: 4em;
+  height: 70px;
+}
+footer {
+  display: flex;
+  background-color: rgba(0,0,0,0.2);
+  height: 70px;
 }
 
 footer > * {
@@ -127,6 +128,7 @@ footer img {
 footer #technologies {
   -webkit-flex: 1;
   flex: 1;
+  font-size: 12px;
 }
 
 footer p {
