@@ -17,6 +17,11 @@ a {
   color: #b77843;
 }
 
+h1 {
+  font-family: 'Bangers';
+  font-size: 20px
+}
+
 .button {
   display: inline-block; /* display inline but have dimensions */
   width: 80px;
@@ -42,7 +47,6 @@ a {
   font-family: 'Bangers'
 }
 
-
 .button.highlighted {
   color: red;
 }
@@ -56,35 +60,98 @@ header {
   opacity: 0.7;
 }
 
-  /* every immediate child to be vertically centered */
-  header > * {
-    margin: auto 0;
-  }
-  header #logo {    
-    display: flex;   
-    margin-right: 20px; 
-    font-family: 'Bangers', cursive; 
-    font-size: 40px; 
+/* every immediate child to be vertically centered */
+header > * {
+  margin: auto 0;
+}
+
+header #logo {    
+  display: flex;   
+  margin-right: 20px; 
+  font-family: 'Bangers', cursive; 
+  font-size: 40px; 
+}
+
+header a {
+  color: white;
+}
+
+header #user-links {
+  flex: 1; /* http://learnlayout.com/flexbox.html */
+  -webkit-flex: 1;
+  text-align: right;  
+}
+
+ header #user-links > * {
+    display: inline-block;
   }
 
-  header a {
-    color: white;
-    text-decoration: none;
+  header #user-links #welcome-message {
+    font-size: 14px;
   }
 
-  header #user-links {
-    flex: 1; /* http://learnlayout.com/flexbox.html */
-    -webkit-flex: 1;
-    text-align: right;  
-  }
+.form-container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 35%;
+  padding-right: 35%;
+  margin-top: 40px;
+  margin-bottom: 100px;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.form_test {
+  font-size: 26px;
+  font-family: "Bangers"
+}
 
 #container {
   background-color: white;
-  margin: 40px;
+  margin-right: 80px;
+  margin-left: 80px;
+  margin-top: 40px;
+  margin-bottom: 150px;
   box-shadow: 0 0 5px rgba(0,0,0,0.4);
-  padding: 10px;
+  padding: 30px;
+  opacity: 0.7;
 
 }
+
+h1 {
+  font-size: 40px ;
+  color: white;
+}
+
+form {
+  text-align: left;
+}
+
+form p {
+  margin: 10px 0;
+}
+
+form input[type="text"], form input[type="password"] {
+  border: 1px solid black;
+  font-size: 16px;
+  width: 400px;
+  }
+
+
+
+.content-container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 100px;
+  padding-right: 100px;
+  margin-bottom: 100px;
+}
+
 
 .link {
   background-color: #EEE;
@@ -93,38 +160,33 @@ header {
   padding: 15px 10px;
 }
 
-.link a.title {
-  letter-spacing: 1px;    
-}
+  .link a.title {
+    letter-spacing: 1px;    
+  }
 
-.link .description {
-  margin: 10px inherit;
-}
+  .link .description {
+    margin: 10px inherit;
+  }
 
-.link .source {
-  float: right;
+  .link .source {
+    /* http://learnlayout.com/float.html and the next 4 sections */
+    float: right; 
+    font-size: 12px;
+  }
+
+.source {
+  margin-top: 30px;
   font-size: 12px;
+  margin-right: 10px;
 }
 
-
-.wrapper {
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  margin: 0 auto -70px;
-}
-.footer, .push {
-  height: 70px;
-}
-footer {
-  display: flex;
-  background-color: rgba(0,0,0,0.2);
-  height: 70px;
+footer a:link {
+  color: white;
 }
 
 footer > * {
-  margin: auto inherit;
-}
+    margin: auto inherit;
+  }
 
 footer img {
   vertical-align: top;
@@ -133,58 +195,21 @@ footer img {
 footer #technologies {
   -webkit-flex: 1;
   flex: 1;
-  font-size: 12px;
 }
 
 footer p {
   padding: 5px 25px;
 }
 
-#notice {
-  text-align: center;
-  margin: 5px;
-  padding: 5px;
-  background-color: #FF8000;
-  border-radius: 4px;
-  box-shadow: 0 0 3px rgba(0,0,0,0.4);
-  color: white;
-  font-family: 'Bangers';
-  opacity: 0.7;
+footer {
+    display: flex;
+    background-color: black;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    font-family: 'News Cycle', sans-serif;
+    color: white;
+    font-size: 12px;
+    position: fixed;
 }
-
-#error {
-    text-align: center;
-  margin: 5px;
-  padding: 5px;
-  background-color: red;
-  border-radius: 4px;
-  box-shadow: 0 0 3px rgba(0,0,0,0.4);
-  color: white;
-}
-
-
-h1 {
-  font-size: 22px ;
- }
- 
- form {
-  text-align: left;
- }
- 
-form p {
-  margin: 10px 0;
-   }
- 
-form input[type="text"], form input[type="password"] {
-  border: 1px solid black;
-  font-size: 16px;
-  width: 400px;
-   }
-
-.form-container {
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 35%;
-  padding-right: 35%;
-  margin-top: 40px;
-  margin-bottom: 40px;

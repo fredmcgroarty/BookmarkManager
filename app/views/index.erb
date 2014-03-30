@@ -3,10 +3,9 @@
   <link rel="stylesheet" type="text/css" href="../css/application.css">
 </head>
 
-<center><h1> BOOKMARK MANAGER</h1></center>
-	
-  <ul id='links'>
-    <% @links.each do |link| %>
-      <%= partial :link, :locals => {:link => link}  %>
-    <% end %>
-  </ul>  
+
+		<ul id="links">
+			<% @links.each do |link| %>
+				<%= partial :link, :locals => {:link => link} %>
+			<% end %>
+		</ul>
