@@ -28,10 +28,8 @@ require 'spec_helper'
     add_link("http://www.makersacademy.com/", 
                 "Makers Academy", 
                 ['education', 'ruby'])    
-    link = Link.first
-    time = Time.now
-    t = time.strftime("%Y-%m-%d %T")    
-    expect(link.instance).to eq(t)
+    link = Link.first   
+    expect(link.instance).to eq(time_gen)
    end
 
   def add_link(url, title, tags = [])
@@ -43,6 +41,10 @@ require 'spec_helper'
 		end
 	end	
 
+  def time_gen 
+    time = Time.now
+    t = time.strftime("%Y-%m-%d %T") 
+  end 
 
 	
 end
