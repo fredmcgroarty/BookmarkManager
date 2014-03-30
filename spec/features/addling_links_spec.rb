@@ -13,7 +13,8 @@ require 'spec_helper'
 			sign_in('test@test.com', 'test')
 			expect(Link.count).to eq(0)
 			add_link("http://www.makersacademy.com/", "Makers Academy")
-			expect(Link.count).to eq(1)
+			expect(Link.count).to eq(1)	  
+
 			link = Link.first 
 			expect(link.url).to eq("http://www.makersacademy.com/")
 			expect(link.title).to eq("Makers Academy")
@@ -32,12 +33,25 @@ require 'spec_helper'
   end
 
   def add_link(url, title, tags = [])
-		within("#new-link") do 
+		within(".new-link") do 
 			fill_in 'url', :with => url 
 			fill_in 'title', :with => title 
 		 	fill_in 'tags', :with => tags.join(' ')
 			click_button 'Add link'
 		end
 	end	
+
+	scenario "and generates a time tag" do
+    visit "/"
+    sign_in('test@test.com', 'test')
+
+    add_link("http://www.makersacademy.com/", 
+                "Makers Academy", 
+                ['education', 'ruby'])    
+    link = Link.first
+    time = Time.now
+    t = time.strftime("%Y-%m-%d %T")    
+    expect(link.instance).to eq(t)
+   end
 	
 end
