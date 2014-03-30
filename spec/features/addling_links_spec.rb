@@ -23,6 +23,17 @@ require 'spec_helper'
     expect(link.tags.map(&:text)).to include("ruby")
   end
 
+  scenario "and generates a time tag" do
+    visit "/links/new"
+    add_link("http://www.makersacademy.com/", 
+                "Makers Academy", 
+                ['education', 'ruby'])    
+    link = Link.first
+    time = Time.now
+    t = time.strftime("%Y-%m-%d %T")    
+    expect(link.instance).to eq(t)
+   end
+
   def add_link(url, title, tags = [])
 		within ('#container') do 
 			fill_in 'url', :with => url 
@@ -31,5 +42,7 @@ require 'spec_helper'
 			click_button 'Add link'
 		end
 	end	
+
+
 	
 end
