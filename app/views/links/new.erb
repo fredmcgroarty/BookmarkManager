@@ -2,11 +2,11 @@
   <link rel="stylesheet" type="text/css" href="../css/reset.css">
   <link rel="stylesheet" type="text/css" href="../css/application.css">
 </head>
-<div id="new-link">
+<div id="new-link" class="form-container">
   <form action="/links" method="post">
-    Url: <input type="text" name="url">
-    Title: <input type="text" name="title">
-    Tags: <input type="text" name="tags">
-    <input type="submit" value="Add link">
+    <p>Url: <input type="text" name="url" placeholder="URL"> </p>
+    <p>Title: <input type="text" name="title" placeholder="Title"> </p>
+    <p>Tags: <input type="text" name="tags" placeholder="Tags (space-separated)"> </p>
+    <input type="submit" value="Add link" class="button">
   </form>
 </div>
