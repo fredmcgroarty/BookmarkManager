@@ -1,12 +1,12 @@
 <% if flash[:errors] && !flash[:errors].empty? %>
-<div id="error">
+<div id="notice">
   Sorry, there were the following problems with the form.... 
-  <ul id="errors">
-    <% flash[:errors].each do |error| %>
-      <li><%= error %></li>
-    <% end %>
 </div>
+    <% flash[:errors].each do |error| %>
+  <ul id="errors">
+      <li><%= error %></li>
   </ul>
+    <% end %>
 <% end %>
 
 <% if flash[:notice] %>

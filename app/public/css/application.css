@@ -120,7 +120,12 @@ header #user-links {
   box-shadow: 0 0 5px rgba(0,0,0,0.4);
   padding: 30px;
   opacity: 0.7;
+}
 
+#container_font {
+  font-family: "Bangers";
+  font-size: 60px;
+  position: inherit;
 }
 
 h1 {
@@ -212,4 +217,38 @@ footer {
     color: white;
     font-size: 12px;
     position: fixed;
+}
+
+#add_link:hover {
+  background-color: white;
+  color: #c0392b;
+}
+
+#welcome-message {
+  color: white;
+  margin-right: 20px;
+}
+
+#notice {
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
+  background-color: #FFA500;
+  border-radius: 4px;
+  color: white;
+  font-size: 17px;
+  font-family: 'News Cycle', sans-serif;
+  opacity: 0.5;
+}
+
+#errors {
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
+  background-color: red;
+  border-radius: 4px;
+  color: white;
+  font-size: 13px;
+  font-family: 'News Cycle', sans-serif;
+  opacity: 0.5;
 }
