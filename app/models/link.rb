@@ -7,6 +7,7 @@ class Link
 	property :title, String 
 	property :url, String 
 	property :time, String
+	property :user_email, String
 	has n, :tags, :through => Resource
 
 end
