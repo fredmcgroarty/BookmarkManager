@@ -1,8 +1,5 @@
 require 'data_mapper'
-require './app/data_mapper_setup' 
-require 'database_cleaner'
-
-
+require './app/data_mapper_setup'  
 
 task :auto_upgrade do  
   # auto_upgrade makes non-destructive changes. 
@@ -22,7 +19,7 @@ task :auto_migrate do
   puts "Auto-migrate complete (data could have been lost)"
 end
 
-task :database_reset do 
-  DatabaseCleaner.start
-  DatabaseCleaner.clean
+task :delete do
+  DataMapper.destroy
+  puts "DIE BITCH!"
 end

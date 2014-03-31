@@ -2,8 +2,6 @@ require 'spec_helper'
 
 feature "User browses the list of links" do
 
-
-
   before(:each) {
     User.create(:email => "test@test.com",
                 :password => 'test',
@@ -14,12 +12,16 @@ feature "User browses the list of links" do
                 :tags => [Tag.first_or_create(:text => 'education')])
     Link.create(:url => "http://www.google.com", 
                 :title => "Google", 
+                :time => "#{time_gen}",
+                :description => "Primary Search Engine", 
                 :tags => [Tag.first_or_create(:text => 'search')])
     Link.create(:url => "http://www.bing.com", 
                 :title => "Bing", 
+                :time => "#{time_gen}", 
                 :tags => [Tag.first_or_create(:text => 'search')])
     Link.create(:url => "http://www.code.org", 
                 :title => "Code.org", 
+                :time => "#{time_gen}", 
                 :tags => [Tag.first_or_create(:text => 'education')])
   }
   scenario "when opening the home page" do
@@ -29,7 +31,9 @@ feature "User browses the list of links" do
     expect(page).to have_content("Makers Academy")
   end
 
-  scenario "filtered links by tags" do 
+  scenario "filtered links by tags" do
+    visit '/'
+    sign_in('test@test.com', 'test') 
   	visit '/tags/search'
   	expect(page).not_to have_content("Code.org")
   	expect(page).to have_content("Google")
@@ -38,7 +42,8 @@ feature "User browses the list of links" do
 
   scenario "and sees the time the ink was added" do 
     visit '/'
-    expect(page).to have_content("#{time_gen}")
+    sign_in('test@test.com', 'test') 
+    expect(page).to have_content("added: @ #{time_gen}")
   end
 
   def time_gen 
