@@ -3,11 +3,18 @@
   <link rel="stylesheet" type="text/css" href="../css/application.css">
 </head>
 <li class='link'>
-  <a class='title' href="<%= link.url %>"><%= link.title %></a>
+  <a class='title' href="<%= link.url %>"> website:<%= link.title %></a>
   <div class='description'>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-  <span class='source'>
-    added @ <%= link.time %> by <a href="#"> <%= link.user_email %></a>
-  </span>
+
+    <p>description: <%= link.description %>  <span class='source'>
+    added: @ <%= link.time %> by <a href="#"> <%= link.user_email %></a>
+  </span></p>
+
+
   </div>
+  <div class="tags"> tags:
+		<% link.tags.each do |tag| %>
+			<a class="link-tags" href="/tags/<%= tag.text %>"><%= tag.text.capitalize %></a>
+		<% end %>
+	</div>
 </li>
