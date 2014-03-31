@@ -9,11 +9,10 @@ end
 post '/links' do 
 		url = params["url"]
 		title = params["title"]
-		time = Time.now
-		instance = time.strftime("%T on %Y-%m-%d")
+		time = Time.now.strftime("%T on %d-%m-%Y")
 		tags = params["tags"].split(" ").map do |tag|
     	Tag.first_or_create(:text => tag)
   	end
-		Link.create(:url => url, :title => title, :tags => tags, :instance => instance)
+		Link.create(:url => url, :title => title, :tags => tags, :time => time)
 		redirect to('/')
 	end

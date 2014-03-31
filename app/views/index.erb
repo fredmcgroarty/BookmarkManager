@@ -5,8 +5,14 @@
 
     <center id="container_font">Current Links</center>
 
+<% if current_user %> 
 		<ul id="links">
 			<% @links.each do |link| %>
 				<%= partial :link, :locals => {:link => link} %>
 			<% end %>
 		</ul>
+
+	<% else %>
+
+		
+<% end %>

@@ -2,7 +2,11 @@
   <link rel="stylesheet" type="text/css" href="../css/reset.css">
   <link rel="stylesheet" type="text/css" href="../css/application.css">
 </head>
+
+
 <center id="container_font">Add a link</center>
+
+<% if current_user %> 
 
 <div class="form-container">
   <form action="/links" method="post">
@@ -15,3 +19,12 @@
       </ul>
   </form>
 </div>
+
+<% else %>
+<center id="please_register">You need to <a href="/users/new">register</a> an account or <a href="/sessions/new">login</a>
+.
+</center>
+
+
+
+<% end %>

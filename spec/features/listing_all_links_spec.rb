@@ -7,9 +7,8 @@ feature "User browses the list of links" do
   before(:each) {
     Link.create(:url => "http://www.makersacademy.com",
                 :title => "Makers Academy", 
-                :instance => "#{time_gen}",
+                :time => "#{time_gen}", 
                 :tags => [Tag.first_or_create(:text => 'education')])
-
     Link.create(:url => "http://www.google.com", 
                 :title => "Google", 
                 :tags => [Tag.first_or_create(:text => 'search')])
@@ -39,6 +38,7 @@ feature "User browses the list of links" do
 
   def time_gen 
     time = Time.now
-    t = time.strftime("%Y-%m-%d %T") 
+    t = time.strftime("%T on %d-%m-%Y")
+
   end 
 end

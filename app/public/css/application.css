@@ -245,8 +245,16 @@ footer {
 }
 
 .new-link {
-  
 }
+
+#please_register {
+  font-size: 20px;
+  color: red;
+  font-family: 'Bangers';
+  opacity: 0.5;
+  padding-top: 50px;
+}
+
 
 #errors {
   text-align: center;
