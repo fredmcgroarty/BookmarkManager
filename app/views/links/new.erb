@@ -1,8 +1,32 @@
-<center><div class="new-link">
+<head>
+  <link rel="stylesheet" type="text/css" href="../css/reset.css">
+  <link rel="stylesheet" type="text/css" href="../css/application.css">
+</head>
+
+
+<center id="container_font">Add a link</center>
+
+<% if current_user %> 
+
+<div class="form-container">
   <form action="/links" method="post">
-    Url: <input type="text" name="url">             
-    Title: <input type="text" name="title">
-    Tags: <input type="text" name="tags">
-    <input type="submit" value="Add link">
+    <p>Url: <input type="text" name="url" placeholder="URL"> </p>
+    <p>Title: <input type="text" name="title" placeholder="Title"> </p>
+    <p>Tags: <input type="text" name="tags" placeholder="Tags (space-separated)"> </p>
+    <p>Description: <input type="text" name="description" placeholder "Description (optional)"</p>
+    <fieldset>
+    <input type="submit" value="Add link" class="button">
+  </fieldset>
+      </ul>
   </form>
-</div></center>
+</div>
+
+<% else %>
+<center><img src="http://25.media.tumblr.com/tumblr_lfyjh7seVw1qfsokbo1_400.gif" alt="some_text"></center>
+<center id="screen_messages">You need to <a href="/users/new">register</a> an account or <a href="/sessions/new">login</a>
+.
+</center>
+
+
+
+<% end %>

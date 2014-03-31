@@ -1,16 +1,25 @@
 <header>
-  <a href='/' id="logo">Bookmark Manager</a>
-  <div id="user-links">
-    <% if current_user %>
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" type="text/css" href="css/application.css">
+  <div id="logo">
+    <a href="/">Bookmark Manager</a>
+  </div>
+  <a href="/links/new" class="button highlighted">Add link</a>
+  <div id="user-links">    
+     <% if current_user %>
+      <span id="welcome">
+        Welcome, <%= current_user.email %>  
+      </span>
+  </div>
     
-  <a href="/" method="post "class="button highlighted">Add link</a>
-
-     <a  class="button highlighted sign-out">Sign out</a>
-      <%= partial :welcome_message %>
-
+      <form id="sign-out" method="post" action="/sessions">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Sign out" class="button">
+      </form>
     <% else %>
       <a href='/users/new' id='sign-up' class='button'>Sign up</a>
-      <a href='/sessions/new' id='sign-in' class='button'>Sign in</a>    
+      <a href='/sessions/new' id='sign-in' class='button'>Sign in</a>      
     <% end %>
-  </div>
+
 </header>
+

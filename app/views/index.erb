@@ -1,17 +1,25 @@
-<% if current_user %>
-  <%= partial :"links/new" %>
+<head>
+  <link rel="stylesheet" type="text/css" href="../css/reset.css">
+  <link rel="stylesheet" type="text/css" href="../css/application.css">
+</head>
 
-<h1>Welcome to the bookmark manager</h1>
+    <center id="container_font">Current Links</center>
 
-Current links:
-<div id='links-container'>
-	<ul id='links'>
-  	<% @links.each do |link| %>
-     <%= partial :link, :locals => {:link => link}  %>
-  <% end %>
-</ul>
-</div>
+	<% if current_user %> 
+		<ul id="links">
+			<% @links.each do |link| %>
+				<%= partial :link, :locals => {:link => link} %>
+			<% end %>
+		</ul>
+		<% if @links.empty? %>
+		<center id="screen_messages">No Links here yet matey, <a href="/links/new">be the first!</a></center>
+			<center><img src="http://www.mormonshare.com/sites/default/files/handouts/cg_face-expression-sad.jpg"width="200" height="200"></center>
+		<% end %>		
 
+	<% else %>
+	<center id="screen_messages">Please <a href="/sessions/new">login</a> or <a href="/users/new">sign up</a> to see the link database
+	</center>
 
-<% end %>
+	<% end %>
+
 

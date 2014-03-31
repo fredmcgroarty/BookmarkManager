@@ -1,19 +1,32 @@
-html {
-    position: relative;
-    min-height: 100%;
+* {
+  box-sizing: border-box;
+}
+
+#new-link {
+  
 }
 
 body {
   font-family: Helvetica, Arial, Sans-serif, 'Bangers';
-  background-image:url("../skulls.png");
-  margin: 0 0 100px; 
+  background-image:url("../skulls.png"); 
 }
 
-.sign-out {
-  cursor: pointer;
+
+html, body {
+  height: 100%;
 }
 
-a.button {
+a {
+  text-decoration: none;
+  color: #b77843;
+}
+
+h1 {
+  font-family: 'Bangers';
+  font-size: 20px
+}
+
+.button {
   display: inline-block; /* display inline but have dimensions */
   width: 80px;
   background-color: black;
@@ -25,14 +38,21 @@ a.button {
   margin-left: 5px;
   margin-right: 5px;
   text-shadow: 0 0 2px rgba(0,0,0, 0.4); /*for readability*/
-  font-family: 'Bangers', cursive;
-  font-size: 25px;
+  font-size: 20px;
+  width: 110px;
+  cursor: pointer;
+  font-family: 'Bangers';
 }
 
-/* a link that has both classes. Overrides the previous declaration */
-a.button.highlighted {
-  background-color: #b77843;
-  float: left; 
+
+
+#welcome {
+  display: inline-block;
+  font-family: 'Bangers'
+}
+
+.button.highlighted {
+  color: red;
 }
 
 header {  
@@ -44,7 +64,7 @@ header {
   opacity: 0.7;
 }
 
-  /* every immediate child to be vertically centered */
+/* every immediate child to be vertically centered */
 header > * {
   margin: auto 0;
 }
@@ -52,13 +72,12 @@ header > * {
 header #logo {    
   display: flex;   
   margin-right: 20px; 
-  font-family: 'Bangers', cursive;
-  font-size: 45px
+  font-family: 'Bangers', cursive; 
+  font-size: 40px; 
 }
 
 header a {
   color: white;
-  text-decoration: none;
 }
 
 header #user-links {
@@ -67,12 +86,81 @@ header #user-links {
   text-align: right;  
 }
 
-#links-container {
-  background-color: white;
-  margin: 40px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.4);
-  padding: 10px;
+ header #user-links > * {
+    display: inline-block;
+  }
+
+  header #user-links #welcome-message {
+    font-size: 14px;
+  }
+
+.form-container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 35%;
+  padding-right: 35%;
+  margin-top: 40px;
+  margin-bottom: 100px;
 }
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.form_test {
+  font-size: 26px;
+  font-family: "Bangers"
+}
+
+#container {
+  background-color: white;
+  margin-right: 80px;
+  margin-left: 80px;
+  margin-top: 40px;
+  margin-bottom: 150px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.4);
+  padding: 30px;
+  opacity: 0.7;
+}
+
+#container_font {
+  font-family: "Bangers";
+  font-size: 60px;
+  position: inherit;
+}
+
+h1 {
+  font-size: 40px ;
+  color: white;
+}
+
+form {
+  text-align: left;
+}
+
+form p {
+  margin: 10px 0;
+}
+
+form input[type="text"], form input[type="password"] {
+  border: 1px solid black;
+  font-size: 16px;
+  width: 400px;
+  }
+
+
+
+.content-container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 100px;
+  padding-right: 100px;
+  margin-bottom: 100px;
+}
+
 
 .link {
   background-color: #EEE;
@@ -81,42 +169,23 @@ header #user-links {
   padding: 15px 10px;
 }
 
-.link a.title {
-  letter-spacing: 1px;    
-}
+  .link a.title {
+    letter-spacing: 1px;    
+  }
 
-.link .description {
-  margin: 10px inherit;
-}
+  .link .description {
+    margin: 10px inherit;
+  }
 
-.link .source {
-  float: right;
-  font-size: 12px;
-}
-
-#notice {
-  text-align: center;
-  margin: 5px;
-  padding: 5px;
-  background-color: rgba(67,183,120,0.75);
-  border-radius: 4px;
-  color: white;
-}
-
-
-footer {
-    display: flex;
-    background-color: black;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    height: 100px;
-    width: 100%;
-    font-family:'Bangers', cursive;
-    color: white;
+  .link .source {
+    float: right; 
     font-size: 12px;
-    opacity: 0.7;
-    position: center;
+  }
+
+.source {
+  margin-top: auto;
+  font-size: 12px;
+  margin-right: 10px;
 }
 
 footer a:link {
@@ -131,27 +200,75 @@ footer img {
   vertical-align: top;
 }
 
+footer #technologies {
+  -webkit-flex: 1;
+  flex: 1;
+}
 
 footer p {
   padding: 5px 25px;
 }
 
-.new-link {
-  font-size: 20px;
-  background: #c0392b;
-  border-radius: 4px;
-  color: white;
-  border: none;
-  font-family: 'Bangers', cursive;
-  padding: 7px;
-  height: 30px;
+footer {
+    display: flex;
+    background-color: black;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    font-family: 'News Cycle', sans-serif;
+    color: white;
+    font-size: 12px;
+    position: fixed;
+}
+
+#add_link:hover {
+  background-color: white;
+  color: #c0392b;
 }
 
 #welcome-message {
-   text-align: center;
+  color: white;
+  margin-right: 20px;
+}
+
+#notice {
+  text-align: center;
   margin: 5px;
   padding: 5px;
-  background-color: rgba(67,183,120,0.75);
+  background-color: #FFA500;
   border-radius: 4px;
   color: white;
+  font-size: 17px;
+  font-family: 'News Cycle', sans-serif;
+  opacity: 0.5;
+}
+
+.new-link {
+}
+
+#screen_messages {
+  font-size: 20px;
+  color: red;
+  font-family: 'Bangers';
+  opacity: 0.5;
+  padding-top: 50px;
+}
+
+
+#errors {
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
+  background-color: red;
+  border-radius: 4px;
+  color: white;
+  font-size: 13px;
+  font-family: 'News Cycle', sans-serif;
+  opacity: 0.5;
+}
+
+.tags {
+  color: red;
+  opacity: 0.7;
 }

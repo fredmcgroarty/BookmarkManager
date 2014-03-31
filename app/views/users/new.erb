@@ -1,9 +1,15 @@
-<h1>Please sign up</h1>
+<head>
+  <link rel="stylesheet" type="text/css" href="../css/reset.css">
+  <link rel="stylesheet" type="text/css" href="../css/application.css">
+</head>
 
-<form action="/users" method="post">
-	Email: <input name="email" type="text" value="<%= @user.email %>">
-  Password: <input name="password" type="password">
-  Password Confirmation: <input name="password_confirmation" type="password">
-  <input type="submit" value="Sign up">
+
+    <center id="container_font">Sign Up</center>
+
+<form action="/users" method="post" class="form-container">
+	<p>Email: <input name="email" type="text" value="<%= @user.email %>"></p>
+  <p>Password: <input name="password" type="password"></p>
+  <p>Password Confirmation: <input name="password_confirmation" type="password"></p>
+  <center><p><input type="submit" value="Sign up" class="button"></p></center>
 </form>
 
