@@ -10,7 +10,7 @@ post '/links' do
 		url = params["url"]
 		title = params["title"]
 		time = Time.now
-		instance = time.strftime("%Y-%m-%d %T")
+		instance = time.strftime("%T on %Y-%m-%d")
 		tags = params["tags"].split(" ").map do |tag|
     	Tag.first_or_create(:text => tag)
   	end
