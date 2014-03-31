@@ -10,6 +10,13 @@ include SessionHelper
                 :password_confirmation => 'test')
   end
 
+    scenario "user cannot add links without an account" do 
+      visit "/links/new"
+      page.should have_css("#screen_messages", :text => "You need to register an account or login .")
+    end
+
+
+
 
 		scenario "when browsing the homepage" do 
       visit "/sessions/new"
@@ -46,7 +53,7 @@ include SessionHelper
                 ['education', 'ruby'])    
     link = Link.first   
     expect(link.time).to eq(time_gen)
-   end
+  end
 
   def add_link(url, title, tags = [])
 		within ('#container') do 

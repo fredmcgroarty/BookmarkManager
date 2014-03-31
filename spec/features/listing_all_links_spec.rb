@@ -13,7 +13,8 @@ feature "User browses the list of links" do
     Link.create(:url => "http://www.google.com", 
                 :title => "Google", 
                 :time => "#{time_gen}",
-                :description => "Primary Search Engine", 
+                :description => "Primary Search Engine",
+                :user_email => "test@test.com", 
                 :tags => [Tag.first_or_create(:text => 'search')])
     Link.create(:url => "http://www.bing.com", 
                 :title => "Bing", 
@@ -40,11 +41,18 @@ feature "User browses the list of links" do
   	expect(page).to have_content("Bing")
 	end
 
-  scenario "and sees the time the ink was added" do 
+  scenario "and sees the time the link was added" do 
     visit '/'
     sign_in('test@test.com', 'test') 
     expect(page).to have_content("added: @ #{time_gen}")
   end
+
+  scenario "and sees a record of the user who added the link" do 
+    visit "/sessions/new"
+    sign_in('test@test.com', 'test')
+    expect(page).to have_content("by test@test.com")
+  end
+
 
   def time_gen 
     time = Time.now

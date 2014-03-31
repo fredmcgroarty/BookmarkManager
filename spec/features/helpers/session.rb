@@ -1,7 +1,7 @@
 module SessionHelper
 
   def sign_in(email, password)
-    visit '/sessions/new' #why do we sign in at sessions/new and not /sign_in /login or something like that. When signing in/out we are manipulating a session : creating ti, destroying it and displaying a form to create it 
+    visit '/sessions/new' 
     fill_in 'email', :with => email
     fill_in 'password', :with => password
     click_button 'Sign in'
