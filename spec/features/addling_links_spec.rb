@@ -14,10 +14,7 @@ include SessionHelper
       visit "/links/new"
       page.should have_css("#screen_messages", :text => "You need to register an account or login .")
     end
-
-
-
-
+    
 		scenario "when browsing the homepage" do 
       visit "/sessions/new"
       sign_in('test@test.com', 'test')

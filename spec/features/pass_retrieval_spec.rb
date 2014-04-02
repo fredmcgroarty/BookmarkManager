@@ -9,15 +9,14 @@ feature "registered user no longer has access to password" do
       :id => 1, 
       :email => 'test@example.com', 
       :password => 'test', 
-      :password_confirmation => 'test', 
-      :password_token => 'RESET_TOKEN', 
-      :password_token_timestamp => Time.now)
+      :password_confirmation => 'test')
   end
 
   scenario "and requests a retrieval token" do 
     visit ('/retrieve') 
 		page.should have_css("#container_font", :text => "Enter Email Address")    
-		fill_in :pass_retrieve, :with => "test@test.com"
-    User.any_instance.stub(:generate_password_token).and_return(true)
+		fill_in :pass_retrieve, :with => "test@example.com"
+		click_button 'Reset'
+		expect(User.get(1).password_token).not_to be_nil
   end
 end
