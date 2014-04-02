@@ -1,1 +1,6 @@
-profile
+
+		<li id="link">
+			<% @links.each do |link| %>
+				<%= partial :link, :locals => {:link => link} %>
+			<% end %>
+		</ul>

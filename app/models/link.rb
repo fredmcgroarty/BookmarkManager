@@ -7,7 +7,10 @@ class Link
 	property :time, String
 	property :user_email, String
 	property :description, String
+	
 	has n, :tags, :through => Resource
+	has n, :users, :through => Resource
+
 
 end
 
