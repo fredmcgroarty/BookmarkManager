@@ -14,9 +14,9 @@
   </span></p>
 <% end %>
   </div>
-  <div class="tags"> tags:
+  <div class="tag"> tags:
 		<% link.tags.each do |tag| %>
-			<a class="link-tags" href="/tags/<%= tag.text %>"> / <%= tag.text %></a>
-		<% end %>
+			 <a href="/tags/<%= tag.text %>"><%= tag.text %></a>
+    <% end %>
 	</div>
 </li>

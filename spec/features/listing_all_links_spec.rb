@@ -32,14 +32,7 @@ feature "User browses the list of links" do
     expect(page).to have_content("Makers Academy")
   end
 
-  scenario "filtered links by tags" do
-    visit '/'
-    sign_in('test@test.com', 'test') 
-  	visit '/tags/search'
-  	expect(page).not_to have_content("Code.org")
-  	expect(page).to have_content("Google")
-  	expect(page).to have_content("Bing")
-	end
+
 
   scenario "and sees the time the link was added" do 
     visit '/'

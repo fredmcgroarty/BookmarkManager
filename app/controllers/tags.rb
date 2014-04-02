@@ -1,6 +1,8 @@
 
 	get '/tags/:text' do 
 		tag = Tag.first(:text => params[:text])
+		user_email = current_user.email
+
 		@links = tag ? tag.links : [] 
 		erb :index
 	end
