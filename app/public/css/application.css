@@ -44,6 +44,10 @@ h1 {
   font-family: 'Share Tech Mono';
 }
 
+.form-container .button {
+  margin-left: 125px;
+
+}
 
 
 #welcome {
@@ -273,10 +277,11 @@ footer {
   opacity: 0.7;
 }
 
-.tag a {
+.tags a {
   background: #FFA500;
   color: white;
   border-radius: 8px;
   padding: 3px 5px;
+  font-size: 12px
 
 }

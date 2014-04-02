@@ -17,7 +17,4 @@ feature "user browses and adds tags" do
   	expect(page).to have_content("Bing")
 	end
 
-	scenario "and sees who added the tags" do 
-		visit '/'
-    sign_in('test@test.com', 'test') 
-  	visit '/tags/search'
+
