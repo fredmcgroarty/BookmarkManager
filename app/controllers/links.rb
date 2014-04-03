@@ -10,11 +10,12 @@ post '/links' do
 		url = params["url"]
 		title = params["title"]
 		time = Time.now.strftime("%T on %d-%m-%Y")
-		user_email = current_user.email
 		description = params["description"]
 		tags = params["tags"].split(" ").map do |tag|
     	Tag.first_or_create(:text => tag)
   	end
-		Link.create(:url => url, :title => title, :tags => tags, :time => time, :user_email => user_email, :description => description)
+		link = Link.new(:url => url, :title => title, :tags => tags, :time => time, :description => description)
+		link.user = current_user
+		link.save
 		redirect to('/')
 	end

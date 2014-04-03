@@ -15,7 +15,6 @@ class User
 	property :password_token_timestamp, DateTime
 	has n, :links, :through => Resource
 
-
 	def password=(password)
 		#creating a setter method (takes a password and sets the password)
 		@password = password
