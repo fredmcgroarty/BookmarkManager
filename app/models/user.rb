@@ -13,7 +13,7 @@ class User
 	property :password_digest, Text #created column in db called 'password digest'
 	property :password_token, Text 
 	property :password_token_timestamp, DateTime
-	has n, :links, :through => Resource
+	has n, :links
 
 	def password=(password)
 		#creating a setter method (takes a password and sets the password)
