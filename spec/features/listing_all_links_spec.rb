@@ -48,7 +48,7 @@ feature "User browses the list of links" do
 
   def time_gen 
     time = Time.now
-    t = time.strftime("%T on %d-%m-%Y")
+    t = time.strftime("%H:%M")
 
   end 
 end

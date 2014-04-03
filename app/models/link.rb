@@ -4,12 +4,15 @@ class Link
 	property :id,	Serial 
 	property :title, String 
 	property :url, String 
-	property :time, String
+	#needs to change to time now, giving test issues.
+	property :time, DateTime
 	property :user_email, String
 	property :description, String
+	property :favourite, Boolean, :default => false
 	
 	has n, :tags, :through => Resource
 	has n, :users, :through => Resource
+
 
 
 end

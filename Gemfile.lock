@@ -115,6 +115,7 @@ DEPENDENCIES
   database_cleaner
   debugger
   dm-postgres-adapter
+  dm-timestamps
   rack-flash3
   rspec
   shotgun

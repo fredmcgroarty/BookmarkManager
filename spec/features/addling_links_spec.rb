@@ -49,7 +49,7 @@ include SessionHelper
                 "Makers Academy", 
                 ['education', 'ruby'])    
     link = Link.first   
-    expect(link.time).to eq(time_gen)
+    expect(link.time.strftime("%T on %d-%m-%Y")).to eq(time_gen)
   end
 
   def add_link(url, title, tags = [])
@@ -62,7 +62,7 @@ include SessionHelper
 	end	
 
   def time_gen 
-    time = Time.now
+    time = DateTime.now
     t = time.strftime("%T on %d-%m-%Y")
   end 
 
