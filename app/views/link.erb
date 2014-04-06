@@ -6,15 +6,14 @@
   <a class='title' href="<%= link.url %>"> website:<%= link.title %></a>
   <div class='description'>
 
-<% if link.description.nil? %>
+<% if link.description.empty? %>
   <p>A description has not been added.</p>
-  <% else %>
+<% end %>
     <p>description: <%= link.description %>  <span class='source'>
     added: @ <%= link.time.strftime("%T on %d-%m-%Y") %> by <a href="/profile/<%= link.user_id %>"><%= link.user.email %></a>
 <button type="button">&#9733;</button>
 
   </span></p>
-<% end %>
   </div>
   <div class="tags"> tags: 
 		<% link.tags.each do |tag| %>

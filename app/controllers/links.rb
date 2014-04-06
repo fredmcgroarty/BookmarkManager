@@ -11,9 +11,7 @@ post '/links' do
 		title = params["title"]
 		time = Time.now.strftime("%T on %d-%m-%Y")
 		description = params["description"]
-		tags = params["tags"].split(" ").map do |tag|
-    	Tag.first_or_create(:text => tag)
-  	end
+		tags = params["tags"].split(" ").map {|tag| Tag.first_or_create(:text => tag)}
 		link = Link.new(:url => url, :title => title, :tags => tags, :time => time, :description => description)
 		link.user = current_user
 		link.save

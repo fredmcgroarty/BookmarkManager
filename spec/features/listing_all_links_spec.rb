@@ -11,19 +11,6 @@ feature "User browses the list of links" do
                 :title => "Makers Academy", 
                 :time => "#{time_gen}", 
                 :tags => [Tag.first_or_create(:text => 'education')])
-    Link.create(:url => "http://www.google.com", 
-                :title => "Google", 
-                :time => "#{time_gen}",
-                :description => "Primary Search Engine",
-                :tags => [Tag.first_or_create(:text => 'search')])
-    Link.create(:url => "http://www.bing.com", 
-                :title => "Bing", 
-                :time => "#{time_gen}", 
-                :tags => [Tag.first_or_create(:text => 'search')])
-    Link.create(:url => "http://www.code.org", 
-                :title => "Code.org", 
-                :time => "#{time_gen}", 
-                :tags => [Tag.first_or_create(:text => 'education')])
   }
 
 
@@ -56,11 +43,15 @@ feature "User browses the list of links" do
     expect(page).to have_content("test@test.com")
   end
 
-  # scenario "and if no description is available a default will take its place" do 
-  #   visit '/'
-  #   sign_in('test@test.com', 'test') 
-  #   expect(page).to have_content("A description has not been added")
-  # end
+  scenario "and if no description is available a default will take its place" do 
+ visit "/sessions/new"
+    sign_in('test@test.com', 'test')
+    visit "/links/new"
+    add_link("http://www.makersacademy.com/", 
+                "Makers Academy", 
+                ['education', 'ruby'])  
+    expect(page).to have_content("A description has not been added")
+  end
 
   def time_gen 
     time = Time.now
