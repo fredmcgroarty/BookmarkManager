@@ -4,6 +4,10 @@ include SessionHelper
 feature "User can have a profile" do
 
 	before(:each) {
+    User.create(:id => "2",
+                :email => "othertest@test.com",
+                :password => 'test',
+                :password_confirmation => 'test',)
     User.create(:id => "1",
                 :email => "test@test.com",
                 :password => 'test',
@@ -28,9 +32,8 @@ feature "User can have a profile" do
   	expect(page).to have_content("James Brown")
     visit '/profile/2'
     expect(page).not_to have_content("James Brown")
-
-
   end
+
 
 end
 

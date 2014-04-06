@@ -21,6 +21,24 @@ feature "user signs up" do
     lambda { sign_up }.should change(User, :count).by(0)
     expect(page).to have_content("This email is already taken")
   end
+end
+
+feature "user signs up with a username" do 
+
+  before(:each) {
+    User.create(:id => "2",
+                :email => "othertest@test.com",
+                :username => "username",
+                :password => 'test',
+                :password_confirmation => 'test',)
+                }
+
+  scenario "with a username that is already registered" do 
+    lambda { sign_up }.should change(User, :count).by(1)
+    visit 'users/new'
+    sign_up 
+    expect(page).to have_content("This username is already taken")
+  end
 
 end
 

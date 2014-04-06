@@ -7,7 +7,8 @@ module SessionHelper
     click_button 'Sign in'
   end
 
-  def sign_up(email = "alice@example.com", 
+  def sign_up(email = "alice@example.com",
+              username = "username", 
               password = "oranges!",
               password_confirmation = "oranges!")
     visit '/users/new'

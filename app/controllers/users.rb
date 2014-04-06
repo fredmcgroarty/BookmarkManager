@@ -6,6 +6,7 @@ get '/users/new' do
 
   post '/users' do
     @user = User.new(:email => params[:email],
+                     :username => params[:username],
                      :password => params[:password],
                      :password_confirmation => params[:password_confirmation])  
     if @user.save

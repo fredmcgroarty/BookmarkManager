@@ -7,7 +7,8 @@ class User
 	attr_accessor :password_confirmation
 
 	property :id, Serial 
-	property :email, String, :unique => true, :message => "This email is already taken" #this checks to see if the email is unique 
+	property :email, String, :unique => true, :message => "This email is already taken" #this checks to see if the email is unique
+	property :username, String, :unique => true, :message => "This username is already taken" 
 	property :password_digest, Text #created column in db called 'password digest'
 	property :password_token, Text 
 	property :password_token_timestamp, DateTime
