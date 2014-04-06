@@ -9,6 +9,7 @@ gem 'bcrypt'
 gem 'rack-flash3'
 gem 'sinatra-partial'
 gem 'dm-timestamps'
+gem 'hpricot'
 
 group :development, :test do 
 	gem 'rspec'

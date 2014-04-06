@@ -287,6 +287,11 @@ footer {
 }
 
 
+#profile {
+  color: red;
+  text-align: center;
+}
+
 .link_info {
   float: right;
   font-size: 12px;

@@ -69,6 +69,7 @@ GEM
     do_postgres (0.10.14)
       data_objects (= 0.10.14)
     fastercsv (1.5.5)
+    hpricot (0.8.6)
     json (1.8.1)
     json_pure (1.8.1)
     mime-types (2.2)
@@ -116,6 +117,7 @@ DEPENDENCIES
   debugger
   dm-postgres-adapter
   dm-timestamps
+  hpricot
   rack-flash3
   rspec
   shotgun

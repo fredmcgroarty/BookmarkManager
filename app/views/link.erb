@@ -12,11 +12,12 @@
       <% end %>
         <div class="link_info">added: @ <%= link.time.strftime("%T on %d-%m-%Y") %> by <a href="/profile/<%= link.user.username %>"><%= link.user.email %></a>
         </div>
-  </span></p>
-  </div>
-  <div class="tags"> tags: 
-		<% link.tags.each do |tag| %>
-			 <a href="/tags/<%= tag.text %>"><%= tag.text %></a>
-    <% end %>
+      </span>
+    </div>
+  <div class="tags"> 
+    tags: 
+		  <% link.tags.each do |tag| %>
+			  <a href="/tags/<%= tag.text %>"><%= tag.text %></a>
+      <% end %>
 	</div>
 </li>

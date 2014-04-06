@@ -1,6 +1,7 @@
 get '/sessions/new' do
   erb :"sessions/new"
 end
+
 post '/sessions' do 
   email, password = params[:email], params[:password]
   user = User.authenticate(email, password)
@@ -12,6 +13,7 @@ post '/sessions' do
     erb :"sessions/new"
   end
 end
+
 delete '/sessions' do
   flash[:notice] = "Adios!"
   session[:user_id] = nil
