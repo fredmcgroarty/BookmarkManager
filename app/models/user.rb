@@ -4,9 +4,7 @@ class User
 	include DataMapper::Resource 
 
 	attr_reader :password
-	#makes the password variable publically available for get
 	attr_accessor :password_confirmation
-	#makes the password_confirmation variable publically available for get and set
 
 	property :id, Serial 
 	property :email, String, :unique => true, :message => "This email is already taken" #this checks to see if the email is unique 

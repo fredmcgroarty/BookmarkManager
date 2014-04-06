@@ -8,22 +8,8 @@ feature "User can have a profile" do
                 :password_confirmation => 'test')
     Link.create(:url => "http://www.makersacademy.com",
                 :title => "Makers Academy", 
-                :time => "#{time_gen}", 
                 :tags => [Tag.first_or_create(:text => 'education')])
-    Link.create(:url => "http://www.google.com", 
-                :title => "Google", 
-                :time => "#{time_gen}",
-                :description => "Primary Search Engine",
-                :user_email => "test@test.com", 
-                :tags => [Tag.first_or_create(:text => 'search')])
-    Link.create(:url => "http://www.bing.com", 
-                :title => "Bing", 
-                :time => "#{time_gen}", 
-                :tags => [Tag.first_or_create(:text => 'search')])
-    Link.create(:url => "http://www.code.org", 
-                :title => "Code.org", 
-                :time => "#{time_gen}", 
-                :tags => [Tag.first_or_create(:text => 'education')])
+                :description => "xxxxxx"
   }
 
   scenario "and see their page with links" do 
