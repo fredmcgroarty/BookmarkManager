@@ -10,7 +10,7 @@
       <% else %>
         <div class="description"><p>description: <%= link.description %>  <span class='source'>
       <% end %>
-        <div class="link_info">added: @ <%= link.time.strftime("%T on %d-%m-%Y") %> by <a href="/profile/<%= link.user_id %>"><%= link.user.email %></a>
+        <div class="link_info">added: @ <%= link.time.strftime("%T on %d-%m-%Y") %> by <a href="/profile/<%= link.user.username %>"><%= link.user.email %></a>
         </div>
 <button type="button">&#9733;</button>
 

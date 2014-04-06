@@ -4,36 +4,42 @@ include SessionHelper
 feature "User can have a profile" do
 
 	before(:each) {
-    User.create(:id => "2",
-                :email => "othertest@test.com",
+    User.create(:email => "bill@test.com",
+                :username => "bill",
+                :password => 'test',
+                :password_confirmation => 'test')
+    User.create(:email => "fred@test.com",
+                :username => 'fred',
                 :password => 'test',
                 :password_confirmation => 'test',)
-    User.create(:id => "1",
-                :email => "test@test.com",
-                :password => 'test',
-                :password_confirmation => 'test')
     User.create(:email => "othertest@test.com",
+                :username => 'geoff',
                 :password => 'test',
                 :password_confirmation => 'test')
-    Link.create(:url => "http://www.Jamesbrown.com",
-                :title => "James Brown", 
-                :tags => [Tag.first_or_create(:text => 'education')],
-                :description => "xxxxxx")
   }
 
   scenario "and see their page with links" do 
   	visit '/'
-  	sign_in('test@test.com', 'test')
+  	sign_in('fred@test.com', 'test')
     visit "/links/new"
     add_link("www.jamesbrown.com", 
                 "James Brown", 
                 ['music', 'funk', 'legend'])
-  	visit '/profile/1'
+  	visit '/profile/fred'
   	expect(page).to have_content("James Brown")
-    visit '/profile/2'
+    visit '/profile/bill'
     expect(page).not_to have_content("James Brown")
   end
 
+  scenario "and remove links from their profile page" do 
+    visit '/'
+    sign_in('fred@test.com', 'test')
+    visit "/links/new"
+    add_link("www.jamesbrown.com", 
+                "James Brown", 
+                ['music', 'funk', 'legend'])
+    visit '/profile/fred'
+    expect(page).to have_content("James Brown")    
 
 end
 

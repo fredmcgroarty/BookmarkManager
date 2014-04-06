@@ -1,5 +1,5 @@
-get '/profile/:id' do
-  user = User.first(:id => params[:id]) 
+get '/profile/:username' do
+  user = User.first(:username => params[:username]) 
   @links = user ? user.links : []
   erb :"users/profile"
 end
