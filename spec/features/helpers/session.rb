@@ -17,4 +17,20 @@ module SessionHelper
     click_button "Sign up"
   end
 
+
+  def add_link(url, title, tags = [])
+    within ('#container') do 
+      fill_in 'url', :with => url 
+      fill_in 'title', :with => title 
+      fill_in 'tags', :with => tags.join(' ')
+      click_button 'Add link'
+    end
+  end 
+
+  def time_gen 
+    time = Time.now
+    t = time.strftime("%T on %d-%m-%Y")
+  end 
+
+
 end

@@ -51,20 +51,5 @@ include SessionHelper
     link = Link.first   
     expect(link.time.strftime("%T on %d-%m-%Y")).to eq(time_gen)
   end
-
-  def add_link(url, title, tags = [])
-		within ('#container') do 
-			fill_in 'url', :with => url 
-			fill_in 'title', :with => title 
-		 	fill_in 'tags', :with => tags.join(' ')
-			click_button 'Add link'
-		end
-	end	
-
-  def time_gen 
-    time = DateTime.now
-    t = time.strftime("%T on %d-%m-%Y")
-  end 
-
 	
 end
