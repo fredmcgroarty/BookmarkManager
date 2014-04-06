@@ -3,3 +3,4 @@ get '/profile/:username' do
   @links = user ? user.links : []
   erb :"users/profile"
 end
+

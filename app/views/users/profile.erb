@@ -1,8 +1,8 @@
 <div class="container">
 	<h1>Profile</h1>
-		<li id="link">
+		<ul id="links">
 			<% @links.each do |link| %>
 				<%= partial :link, :locals => {:link => link} %>
 			<% end %>
-		</li>
+		</ul>
 	</div>
