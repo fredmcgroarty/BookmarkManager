@@ -31,15 +31,16 @@ feature "User can have a profile" do
     expect(page).not_to have_content("James Brown")
   end
 
-  scenario "and remove links from their profile page" do 
-    visit '/'
-    sign_in('fred@test.com', 'test')
-    visit "/links/new"
-    add_link("www.jamesbrown.com", 
-                "James Brown", 
-                ['music', 'funk', 'legend'])
-    visit '/profile/fred'
-    expect(page).to have_content("James Brown")    
+  # scenario "and remove links from their profile page" do 
+  #   visit '/'
+  #   sign_in('fred@test.com', 'test')
+  #   visit "/links/new"
+  #   add_link("www.jamesbrown.com", 
+  #               "James Brown", 
+  #               ['music', 'funk', 'legend'])
+  #   visit '/profile/fred'
+  #   expect(page).to have_content("James Brown")
+  # end    
 
 end
 
