@@ -165,6 +165,20 @@ form input[type="text"], form input[type="password"] {
   margin-bottom: 100px;
 }
 
+.link .star {
+    /* absolute but relative to the first parent that's relative */
+    position: absolute;
+    font-size: 30px;
+    right: 5px;
+    top: 5px;
+    color: FFFF00;
+    cursor: pointer;
+    opacity: 0.7
+  }
+
+.link .star.solid {
+  opacity: 0; /* not hidden (nonexistent), just invisible */
+  }
 
 .link {
   background-color: #EEE;
@@ -172,6 +186,7 @@ form input[type="text"], form input[type="password"] {
   margin: 10px inherit;
   padding: 15px 10px;
   display: none;
+  position: relative;
 }
 
   .link a.title {
