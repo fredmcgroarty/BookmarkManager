@@ -1,6 +1,6 @@
 ## Bookmark manager
 
-![screenshot](public/images/bookmark_screenshot.png)
+![screenshot](public/bookmark_screenshot.png)
 
 Week 5 Project using TDD/BDD for back-end AND front-end development, also incorporating databases.
 
